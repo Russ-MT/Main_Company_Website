@@ -15,7 +15,7 @@ function Navbar(props) {
         className="header--container"
         style={{
           color: bgColor === "white" ? "black" : "white",
-          opacity: bgColor === "white" ? "0.8" : "1",
+          opacity: 0.9,
           borderBottom: `1px solid ${bgColor === "white" ? "black" : "white"}`,
         }}
       >

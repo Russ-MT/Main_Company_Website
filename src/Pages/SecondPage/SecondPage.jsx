@@ -3,9 +3,15 @@ import "./SecondPage.scss";
 import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
-import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
+import {
+  changeBgColor,
+  setCurrPage,
+} from "../../features/BackgroundColor/BackgroundColor";
+import { motion } from "framer-motion";
 
 function SecondPage(props) {
+  const { currPage } = useSelector((state) => state.bgColor);
+  const containerRef = useRef(null);
   const currRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -16,9 +22,11 @@ function SecondPage(props) {
       const scrollPosition = window.scrollY;
 
       const currentPage = Math.ceil(scrollPosition / pageHeight);
-      if (currentPage === 2) {
+
+      if (currentPage >= 2 && currentPage < 4) {
         const col = currRef.current.style.backgroundColor;
         dispatch(changeBgColor(col));
+        dispatch(setCurrPage(currentPage));
       }
     };
 
@@ -34,10 +42,41 @@ function SecondPage(props) {
   return (
     <>
       <div
-        className="second-page--container"
+        className="second-page"
         ref={currRef}
-        style={{ backgroundColor: "white" }}
-      ></div>
+        style={{ backgroundColor: "black" }}
+      >
+        <div className="sec-page--container">
+          <div className="text--container">
+            <h1 className="text">SHAPING WEB3</h1>
+            <h1 className="text">THROUGH</h1>
+            <h1 className="text">STORYTELLING,</h1>
+            <h1 className="text">EXPERIENCES</h1>
+            <h1 className="text">AND COMMUNITY.</h1>
+          </div>
+
+          <div className="box--container">
+            {currPage === 2 && (
+              <motion.div
+                className="box"
+                animate={{
+                  opacity: 1,
+                  y: "100vh",
+                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  rotate: 360,
+                }}
+                initial={{
+                  opacity: 0.5,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+              ></motion.div>
+            )}
+          </div>
+        </div>
+        <div className="gradient--container" ref={containerRef}></div>
+      </div>
     </>
   );
 }

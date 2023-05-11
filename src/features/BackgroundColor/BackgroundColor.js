@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   bgColor: "black",
-  currPage: "",
+  currPage: 0,
 };
 
 const bgColorSlice = createSlice({
@@ -12,11 +12,11 @@ const bgColorSlice = createSlice({
     changeBgColor(state, action) {
       state.bgColor = action.payload;
     },
-    getCurrPage(state, action) {
+    setCurrPage(state, action) {
       state.currPage = action.payload;
     },
   },
 });
 
-export const { changeBgColor, getCurrPage } = bgColorSlice.actions;
+export const { changeBgColor, setCurrPage } = bgColorSlice.actions;
 export default bgColorSlice.reducer;

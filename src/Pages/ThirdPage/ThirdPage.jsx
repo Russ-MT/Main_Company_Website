@@ -1,5 +1,5 @@
 import React from "react";
-import "./FirstPage.scss";
+import "./ThirdPage.scss";
 import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,19 +8,18 @@ import {
   setCurrPage,
 } from "../../features/BackgroundColor/BackgroundColor";
 
-function FirstPage(props) {
+function ThirdPage(props) {
   const currRef = useRef(null);
   const dispatch = useDispatch();
 
   //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
-
   useEffect(() => {
     const handleScroll = () => {
       const pageHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
 
       const currentPage = Math.ceil(scrollPosition / pageHeight);
-      if (currentPage === 1) {
+      if (currentPage === 4) {
         const col = currRef.current.style.backgroundColor;
         dispatch(changeBgColor(col));
         dispatch(setCurrPage(currentPage));
@@ -39,12 +38,12 @@ function FirstPage(props) {
   return (
     <>
       <div
-        className="first-page--container"
+        className="third-page"
         ref={currRef}
-        style={{ backgroundColor: "black" }}
+        style={{ backgroundColor: "white" }}
       ></div>
     </>
   );
 }
 
-export default FirstPage;
+export default ThirdPage;
