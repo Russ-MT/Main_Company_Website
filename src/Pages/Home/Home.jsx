@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Home.scss";
+import SecondPage from "../SecondPage/SecondPage";
+import "intersection-observer";
+import FirstPage from "../FirstPage/FirstPage";
 
 function Home(props) {
   return (
-    <div>
-      <p>This is Home Page</p>
-    </div>
+    <>
+      <FirstPage />
+      <SecondPage />
+    </>
   );
 }
 

@@ -1,0 +1,49 @@
+header {
+  padding: 15px 60px;
+  background-color: black;
+  .header--container {
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    // opacity: 0.7;
+
+    .logo {
+      font-size: 40px;
+    }
+
+    .nav--links {
+      margin-left: auto;
+      padding-top: 10px;
+      .nav--link {
+        color: #ffffff;
+        margin: 10px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .nav--link:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    padding: 5px 5px;
+    .header--container {
+      .logo {
+        font-size: 25px;
+      }
+      .nav--links {
+        display: none;
+      }
+    }
+  }
+}

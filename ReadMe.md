@@ -26,3 +26,7 @@ Create pages in the `Pages` folder following a structure similar to the `Compone
 Feel free to modify the folder and file names as per your project requirements.
 
 Make sure to organize your components and pages accordingly to maintain a structured and organized codebase.
+
+## Fonts
+
+- Links & Buttons : font-family: 'Poppins', sans-serif;
