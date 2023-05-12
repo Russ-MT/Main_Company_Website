@@ -9,14 +9,20 @@ function Navbar(props) {
   //get the page's background color state
   const { bgColor } = useSelector((state) => state.bgColor);
 
+  let tmpColor = bgColor;
+
+  if (bgColor === undefined) {
+    tmpColor = "black";
+  }
+
   return (
     <header>
       <div
         className="header--container"
         style={{
-          color: bgColor === "white" ? "black" : "white",
+          color: tmpColor === "white" ? "black" : "white",
           opacity: 0.8,
-          borderBottom: `1px solid ${bgColor === "white" ? "black" : "white"}`,
+          borderBottom: `1px solid ${tmpColor === "white" ? "black" : "white"}`,
           // backgroundColor: bgColor,
           zIndex: 2,
         }}
@@ -28,7 +34,7 @@ function Navbar(props) {
             to="/"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: bgColor === "white" ? "black" : "white",
+              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -38,7 +44,7 @@ function Navbar(props) {
             to="about"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: bgColor === "white" ? "black" : "white",
+              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -48,7 +54,7 @@ function Navbar(props) {
             to="socials"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: bgColor === "white" ? "black" : "white",
+              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -58,7 +64,7 @@ function Navbar(props) {
             to="career"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: bgColor === "white" ? "black" : "white",
+              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >

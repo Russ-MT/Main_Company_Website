@@ -25,7 +25,8 @@ function SecondPage(props) {
 
       console.log(currentPage);
 
-      if (currentPage >= 2 && currentPage < 3) {
+      if (currentPage >= 2 && currentPage < 4) {
+        //scroll is not smooth change this to 3
         const col = currRef.current.style.backgroundColor;
         dispatch(changeBgColor(col));
         dispatch(setCurrPage(currentPage));
