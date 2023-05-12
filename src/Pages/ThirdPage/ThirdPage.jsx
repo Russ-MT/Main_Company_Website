@@ -9,6 +9,7 @@ import {
 } from "../../features/BackgroundColor/BackgroundColor";
 import { motion } from "framer-motion";
 import TypeWriterEffect from "react-typewriter-effect";
+import FractalTree from "./Fractal";
 
 function ThirdPage(props) {
   const currRef = useRef(null);
@@ -62,9 +63,9 @@ function ThirdPage(props) {
             }}
           >
             <div className="article">
-              <p className="article--heading">
+              <h1 className="article--heading">
                 <TypeWriterEffect
-                  startDelay={2000}
+                  startDelay={0}
                   cursorColor="#3F3D56"
                   multiText={[
                     "Let's",
@@ -91,7 +92,7 @@ function ThirdPage(props) {
                   loop={Infinity}
                   wrapper="p"
                 /> */}
-              </p>
+              </h1>
 
               <p className="article--description">
                 Lorem ipsum dolor sit amet consectetur. Gravida ultricies nunc
@@ -102,8 +103,9 @@ function ThirdPage(props) {
 
               <a className="learn-more--btn">Learn More</a>
             </div>
-
-            <div className="particle-motion"></div>
+            <div className="particle-motion">
+              <FractalTree />
+            </div>
           </motion.div>
         )}
       </div>

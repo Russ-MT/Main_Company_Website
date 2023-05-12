@@ -17,7 +17,7 @@ function Navbar(props) {
           color: bgColor === "white" ? "black" : "white",
           opacity: 0.8,
           borderBottom: `1px solid ${bgColor === "white" ? "black" : "white"}`,
-          backgroundColor: bgColor,
+          // backgroundColor: bgColor,
           zIndex: 2,
         }}
       >
