@@ -55,7 +55,7 @@ function ThirdPage(props) {
                      Curabitur at quam eget orci et tortor.
                   </p>
 
-                  <button className="learn-more--btn">Learn More</button>
+                  <a className="learn-more--btn">Learn More</a>
                </div>
                <div className="particle-motion"></div>
             </div>
