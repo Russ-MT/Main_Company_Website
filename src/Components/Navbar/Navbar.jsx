@@ -15,8 +15,10 @@ function Navbar(props) {
         className="header--container"
         style={{
           color: bgColor === "white" ? "black" : "white",
-          opacity: 0.9,
+          opacity: 0.8,
           borderBottom: `1px solid ${bgColor === "white" ? "black" : "white"}`,
+          backgroundColor: bgColor,
+          zIndex: 2,
         }}
       >
         <div className="logo">LOGO</div>
