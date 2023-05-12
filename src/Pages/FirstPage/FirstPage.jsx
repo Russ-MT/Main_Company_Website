@@ -3,38 +3,30 @@ import "./FirstPage.scss";
 import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeBgColor,
-  setCurrPage,
-} from "../../features/BackgroundColor/BackgroundColor";
+import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
+import { useInView } from "framer-motion";
 
 function FirstPage(props) {
   const currRef = useRef(null);
+  const isInView = useInView(currRef);
   const dispatch = useDispatch();
 
-  //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
-
   useEffect(() => {
-    const handleScroll = () => {
-      const pageHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
+    // const handleScroll = () => {
+    if (isInView) {
+      const col = currRef.current.style.backgroundColor;
+      dispatch(changeBgColor(col));
+    }
+    // };
 
-      const currentPage = Math.ceil(scrollPosition / pageHeight);
-      if (currentPage === 1) {
-        const col = currRef.current.style.backgroundColor;
-        dispatch(changeBgColor(col));
-        dispatch(setCurrPage(currentPage));
-      }
-    };
+    // // Add event listener for scroll event
+    // window.addEventListener("scroll", handleScroll);
 
-    // Add event listener for scroll event
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // // Clean up the event listener on component unmount
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
+  }, [isInView]);
 
   return (
     <>

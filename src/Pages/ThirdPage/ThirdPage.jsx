@@ -3,41 +3,35 @@ import "./ThirdPage.scss";
 import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeBgColor,
-  setCurrPage,
-} from "../../features/BackgroundColor/BackgroundColor";
-import { motion } from "framer-motion";
+import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
+import { motion, useInView } from "framer-motion";
 import TypeWriterEffect from "react-typewriter-effect";
 import FractalTree from "./Fractal";
 
 function ThirdPage(props) {
   const currRef = useRef(null);
+  const isInView = useInView(currRef);
   const dispatch = useDispatch();
-  const { currPage } = useSelector((state) => state.bgColor);
 
-  //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
   useEffect(() => {
-    const handleScroll = () => {
-      const pageHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-
-      const currentPage = Math.ceil(scrollPosition / pageHeight);
-      if (currentPage > 3 && currPage < 4) {
-        const col = currRef.current.style.backgroundColor;
-        dispatch(changeBgColor(col));
-        dispatch(setCurrPage(currentPage));
-      }
-    };
+    console.log("Listening");
+    // const handleScroll = () => {
+    if (isInView) {
+      console.log("In View");
+      const col = currRef.current.style.backgroundColor;
+      console.log(col);
+      dispatch(changeBgColor(col));
+    }
+    // };
 
     // Add event listener for scroll event
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // // Clean up the event listener on component unmount
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
+  }, [isInView]);
 
   return (
     <>
@@ -46,7 +40,7 @@ function ThirdPage(props) {
         ref={currRef}
         style={{ backgroundColor: "white" }}
       >
-        {currPage > 2 && (
+        {isInView && (
           <motion.div
             className="third-page--container"
             animate={{
@@ -72,7 +66,7 @@ function ThirdPage(props) {
                     "Connect !!",
                     "The ....",
                     "Dots",
-                    "Let's Connect The Dots",
+                    "Let's Connect The Dots.",
                   ]}
                   multiTextDelay={1000}
                   typeSpeed={40}

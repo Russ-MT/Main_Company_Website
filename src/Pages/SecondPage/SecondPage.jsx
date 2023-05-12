@@ -3,44 +3,31 @@ import "./SecondPage.scss";
 import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeBgColor,
-  setCurrPage,
-} from "../../features/BackgroundColor/BackgroundColor";
-import { motion } from "framer-motion";
+import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
+import { motion, useInView } from "framer-motion";
 
 function SecondPage(props) {
-  const { currPage } = useSelector((state) => state.bgColor);
   const containerRef = useRef(null);
   const currRef = useRef(null);
   const dispatch = useDispatch();
+  const isInView = useInView(currRef);
 
-  //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
   useEffect(() => {
-    const handleScroll = () => {
-      const pageHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-
-      const currentPage = Math.ceil(scrollPosition / pageHeight);
-
-      console.log(currentPage);
-
-      if (currentPage >= 2 && currentPage < 4) {
-        //scroll is not smooth change this to 3
-        const col = currRef.current.style.backgroundColor;
-        dispatch(changeBgColor(col));
-        dispatch(setCurrPage(currentPage));
-      }
-    };
+    // const handleScroll = () => {
+    if (isInView) {
+      const col = currRef.current.style.backgroundColor;
+      dispatch(changeBgColor(col));
+    }
+    // };
 
     // Add event listener for scroll event
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // // Clean up the event listener on component unmount
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
+  }, [isInView]);
 
   return (
     <>
@@ -51,14 +38,14 @@ function SecondPage(props) {
       >
         <div className="sec-page--container">
           <div className="text--container">
-            {currPage === 2 && (
+            {isInView && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
                   y: "100px",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                  rotate: 360,
+                  // rotate: 360,
                 }}
                 initial={{
                   y: "1000px",
@@ -72,14 +59,14 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {isInView && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
                   // y: "120px",
                   x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
                 initial={{
                   // y: "400px",
@@ -101,14 +88,14 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {isInView && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
                   // y: "130px",
                   x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
                 initial={{
                   y: "150px",
@@ -123,14 +110,14 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {isInView && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
                   // y: "150px",
                   x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
                 initial={{
                   y: "200px",
@@ -153,7 +140,7 @@ function SecondPage(props) {
           </div>
 
           <div className="box--container">
-            {currPage === 2 && (
+            {isInView && (
               <motion.div
                 className="box"
                 animate={{
@@ -164,6 +151,7 @@ function SecondPage(props) {
                 }}
                 initial={{
                   opacity: 0.5,
+                  y: 0,
                 }}
                 transition={{
                   duration: 1.2,
@@ -172,7 +160,7 @@ function SecondPage(props) {
             )}
           </div>
         </div>
-        {/* <div className="gradient--container" ref={containerRef}></div> */}
+        <div className="gradient--container" ref={containerRef}></div>
       </div>
     </>
   );

@@ -3,30 +3,20 @@ import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
-import { useEffect, useState } from "react";
 
 function Navbar(props) {
   //get the page's background color state
   const { bgColor } = useSelector((state) => state.bgColor);
 
-  let tmpColor = bgColor;
+  // let tmpColor = bgColor;
 
-  if (bgColor === undefined) {
-    tmpColor = "black";
-  }
+  // if (bgColor === undefined) {
+  //   tmpColor = "black";
+  // }
 
   return (
     <header>
-      <div
-        className="header--container"
-        style={{
-          color: tmpColor === "white" ? "black" : "white",
-          opacity: 0.8,
-          borderBottom: `1px solid ${tmpColor === "white" ? "black" : "white"}`,
-          // backgroundColor: bgColor,
-          zIndex: 2,
-        }}
-      >
+      <div className="header--container">
         <div className="logo">LOGO</div>
 
         <div className="nav--links">
@@ -34,7 +24,6 @@ function Navbar(props) {
             to="/"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -44,7 +33,6 @@ function Navbar(props) {
             to="about"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -54,7 +42,6 @@ function Navbar(props) {
             to="socials"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
@@ -64,7 +51,6 @@ function Navbar(props) {
             to="career"
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
-              color: tmpColor === "white" ? "black" : "white",
             })}
             className="nav--link"
           >
