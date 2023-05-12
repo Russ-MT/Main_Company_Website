@@ -48,11 +48,101 @@ function SecondPage(props) {
       >
         <div className="sec-page--container">
           <div className="text--container">
-            <h1 className="text">SHAPING WEB3</h1>
+            {currPage === 2 && (
+              <motion.h1
+                className="text"
+                animate={{
+                  opacity: 1,
+                  y: "200px",
+                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "1000px",
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+              >
+                SHAPING WEB3
+              </motion.h1>
+            )}
+
+            {currPage === 2 && (
+              <motion.h1
+                className="text"
+                animate={{
+                  opacity: 0.8,
+                  y: "210px",
+                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "1000px",
+                  // x: "100px",
+
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                  // type: "spring",
+                  // stiffness: 80,
+                  // dumping: 50,
+                }}
+                style={{ fontSize: "5rem" }}
+              >
+                THROUGH
+              </motion.h1>
+            )}
+
+            {currPage === 2 && (
+              <motion.h1
+                className="text"
+                animate={{
+                  opacity: 1,
+                  y: "220px",
+                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "1500px",
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 2,
+                }}
+              >
+                STORYTELLING
+              </motion.h1>
+            )}
+
+            {currPage === 2 && (
+              <motion.h1
+                className="text"
+                animate={{
+                  opacity: 1,
+                  y: "230px",
+                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "1500px",
+                  opacity: 0,
+                }}
+                transition={{
+                  // type: "spring",
+                  // stiffness: 40,
+                  // dumping: 200,
+
+                  duration: 2.2,
+                }}
+              >
+                EXPERIENCES
+              </motion.h1>
+            )}
+
+            {/* <h1 className="text">SHAPING WEB3</h1>
             <h1 className="text">THROUGH</h1>
             <h1 className="text">STORYTELLING,</h1>
             <h1 className="text">EXPERIENCES</h1>
-            <h1 className="text">AND COMMUNITY.</h1>
+            <h1 className="text">AND COMMUNITY.</h1> */}
           </div>
 
           <div className="box--container">
@@ -61,7 +151,7 @@ function SecondPage(props) {
                 className="box"
                 animate={{
                   opacity: 1,
-                  y: "100vh",
+                  y: "80vh",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
                   rotate: 360,
                 }}
@@ -69,13 +159,13 @@ function SecondPage(props) {
                   opacity: 0.5,
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 1.2,
                 }}
               ></motion.div>
             )}
           </div>
         </div>
-        <div className="gradient--container" ref={containerRef}></div>
+        {/* <div className="gradient--container" ref={containerRef}></div> */}
       </div>
     </>
   );
