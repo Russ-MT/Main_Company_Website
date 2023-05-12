@@ -50,7 +50,7 @@ function SecondPage(props) {
       >
         <div className="sec-page--container">
           <div className="text--container">
-            {currPage >= 2 && currPage < 4 && (
+            {currPage === 2 && (
               <motion.h1
                 className="text"
                 animate={{
@@ -71,7 +71,7 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage >= 2 && currPage < 4 && (
+            {currPage === 2 && (
               <motion.h1
                 className="text"
                 animate={{
@@ -100,7 +100,7 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage >= 2 && currPage < 4 && (
+            {currPage === 2 && (
               <motion.h1
                 className="text"
                 animate={{
@@ -122,7 +122,7 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage >= 2 && currPage < 4 && (
+            {currPage === 2 && (
               <motion.h1
                 className="text"
                 animate={{
@@ -152,7 +152,7 @@ function SecondPage(props) {
           </div>
 
           <div className="box--container">
-            {currPage >= 2 && currPage < 4 && (
+            {currPage === 2 && (
               <motion.div
                 className="box"
                 animate={{
