@@ -4,178 +4,173 @@ import { useEffect, useState, useRef } from "react";
 import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  changeBgColor,
-  setCurrPage,
+   changeBgColor,
+   setCurrPage,
 } from "../../features/BackgroundColor/BackgroundColor";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { inView } from "framer-motion";
 
 function SecondPage(props) {
-  const { currPage } = useSelector((state) => state.bgColor);
-  const containerRef = useRef(null);
-  const currRef = useRef(null);
-  const dispatch = useDispatch();
+   const { currPage } = useSelector((state) => state.bgColor);
+   const containerRef = useRef(null);
+   const currRef = useRef(null);
+   const dispatch = useDispatch();
 
-  //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
-  useEffect(() => {
-    const handleScroll = () => {
-      const pageHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
+   const ref = useRef(null);
+   const isInView = useInView(ref, {
+      margin: "-30%",
+   });
 
-      const currentPage = Math.ceil(scrollPosition / pageHeight);
+   //listening user scroll and checking whether currentpage or not, if current page => change bg color stage to curr bg color
+   useEffect(() => {
+      const handleScroll = () => {
+         const pageHeight = window.innerHeight;
+         const scrollPosition = window.scrollY;
 
-      console.log(currentPage);
+         const currentPage = Math.ceil(scrollPosition / pageHeight);
 
-      if (currentPage >= 2 && currentPage < 4) {
-        //scroll is not smooth change this to 3
-        const col = currRef.current.style.backgroundColor;
-        dispatch(changeBgColor(col));
-        dispatch(setCurrPage(currentPage));
-      }
-    };
+         console.log(currentPage);
 
-    // Add event listener for scroll event
-    window.addEventListener("scroll", handleScroll);
+         if (currentPage >= 2 && currentPage < 4) {
+            //scroll is not smooth change this to 3
+            const col = currRef.current.style.backgroundColor;
+            dispatch(changeBgColor(col));
+            dispatch(setCurrPage(currentPage));
+         }
+      };
 
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      // Add event listener for scroll event
+      window.addEventListener("scroll", handleScroll);
 
-  return (
-    <>
-      <div
-        className="second-page"
-        ref={currRef}
-        style={{ backgroundColor: "black" }}
-      >
-        <div className="sec-page--container">
-          <div className="text--container">
-            {currPage === 2 && (
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  y: "100px",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                  rotate: 360,
-                }}
-                initial={{
-                  y: "1000px",
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 1,
-                }}
-              >
-                SHAPING WEB3
-              </motion.h1>
-            )}
+      // Clean up the event listener on component unmount
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+      };
+   }, []);
 
-            {currPage === 2 && (
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  // y: "120px",
-                  x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                }}
-                initial={{
-                  // y: "400px",
-                  y: "120px",
+   return (
+      <>
+         <div className="second-page" style={{ backgroundColor: "black" }}>
+            <div className="sec-page--container">
+               <div className="text--container" ref={ref}>
 
-                  x: "3000px",
+                     <motion.h1
+                        className="text"
+                        animate={{
+                           opacity: 1,
+                           y: isInView ? "0px" : "1000px",
+                           //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                          //  rotate: 360,
+                        }}
+                        initial={{
+                           y: "1000px",
+                           opacity: 0,
+                        }}
+                        transition={{
+                           duration: 1,
+                        }}
+                     >
+                        SHAPING WEB3
+                     </motion.h1>
 
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 1.2,
-                  // type: "spring",
-                  // stiffness: 80,
-                  // dumping: 50,
-                }}
-                style={{ fontSize: "5rem" }}
-              >
-                THROUGH
-              </motion.h1>
-            )}
+                     <motion.h1
+                        className="text"
+                        animate={{
+                           opacity: 1,
+                           // y: "120px",
+                           x: isInView ? "0" : "3000px",
+                           //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                        }}
+                        initial={{
+                           // y: "400px",
+                           y: "120px",
 
-            {currPage === 2 && (
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  // y: "130px",
-                  x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                }}
-                initial={{
-                  y: "150px",
-                  x: "-1000px",
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 1.5,
-                }}
-              >
-                STORYTELLING
-              </motion.h1>
-            )}
+                           x: "3000px",
 
-            {currPage === 2 && (
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  // y: "150px",
-                  x: "0",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                }}
-                initial={{
-                  y: "200px",
-                  x: "-1000px",
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 1.5,
-                }}
-              >
-                EXPERIENCES
-              </motion.h1>
-            )}
+                           opacity: 0,
+                        }}
+                        transition={{
+                           duration: 1.2,
+                           // type: "spring",
+                           // stiffness: 80,
+                           // dumping: 50,
+                        }}
+                        style={{ fontSize: "5rem" }}
+                     >
+                        THROUGH
+                     </motion.h1>
 
-            {/* <h1 className="text">SHAPING WEB3</h1>
+                     <motion.h1
+                        className="text"
+                        animate={{
+                           opacity: 1,
+                           // y: "130px",
+                           x: isInView ? "0" : "-1000px",
+                           //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                        }}
+                        initial={{
+                           y: "150px",
+                           x: "-1000px",
+                           opacity: 0,
+                        }}
+                        transition={{
+                           duration: 1.5,
+                        }}
+                     >
+                        STORYTELLING
+                     </motion.h1>
+
+                     <motion.h1
+                        className="text"
+                        animate={{
+                           opacity: 1,
+                           // y: "150px",
+                           x: isInView ? "0" : "-1000px",
+                           //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                        }}
+                        initial={{
+                           y: "200px",
+                           x: "-1000px",
+                           opacity: 0,
+                        }}
+                        transition={{
+                           duration: 1.5,
+                        }}
+                     >
+                        EXPERIENCES
+                     </motion.h1>
+
+                  {/* <h1 className="text">SHAPING WEB3</h1>
             <h1 className="text">THROUGH</h1>
             <h1 className="text">STORYTELLING,</h1>
             <h1 className="text">EXPERIENCES</h1>
             <h1 className="text">AND COMMUNITY.</h1> */}
-          </div>
+               </div>
 
-          <div className="box--container">
-            {currPage === 2 && (
-              <motion.div
-                className="box"
-                animate={{
-                  opacity: 1,
-                  y: "60vh",
-                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
-                  rotate: 360,
-                }}
-                initial={{
-                  opacity: 0.5,
-                }}
-                transition={{
-                  duration: 1.2,
-                }}
-              ></motion.div>
-            )}
-          </div>
-        </div>
-        {/* <div className="gradient--container" ref={containerRef}></div> */}
-      </div>
-    </>
-  );
+               <div className="box--container">
+
+                     <motion.div
+                        className="box"
+                        animate={{
+                           opacity: 1,
+                           y: isInView ? "60vh" : "0",
+                           //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
+                           rotate: isInView ? 360 : 0,
+                        }}
+                        initial={{
+                           opacity: 0.5,
+                        }}
+                        transition={{
+                           duration: 1.2,
+                        }}
+                     ></motion.div>
+
+               </div>
+            </div>
+            {/* <div className="gradient--container" ref={containerRef}></div> */}
+         </div>
+      </>
+   );
 }
 
 export default SecondPage;
