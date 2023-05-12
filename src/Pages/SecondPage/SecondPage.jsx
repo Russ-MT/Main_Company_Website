@@ -23,7 +23,9 @@ function SecondPage(props) {
 
       const currentPage = Math.ceil(scrollPosition / pageHeight);
 
-      if (currentPage >= 2 && currentPage < 4) {
+      console.log(currentPage);
+
+      if (currentPage >= 2 && currentPage < 3) {
         const col = currRef.current.style.backgroundColor;
         dispatch(changeBgColor(col));
         dispatch(setCurrPage(currentPage));
@@ -48,42 +50,46 @@ function SecondPage(props) {
       >
         <div className="sec-page--container">
           <div className="text--container">
-            {currPage === 2 && (
+            {currPage >= 2 && currPage < 4 && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
-                  y: "200px",
+                  y: "100px",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  rotate: 360,
                 }}
                 initial={{
                   y: "1000px",
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 1,
                 }}
               >
                 SHAPING WEB3
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {currPage >= 2 && currPage < 4 && (
               <motion.h1
                 className="text"
                 animate={{
-                  opacity: 0.8,
-                  y: "210px",
+                  opacity: 1,
+                  // y: "120px",
+                  x: "0",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
                 }}
                 initial={{
-                  y: "1000px",
-                  // x: "100px",
+                  // y: "400px",
+                  y: "120px",
+
+                  x: "3000px",
 
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 1.2,
                   // type: "spring",
                   // stiffness: 80,
                   // dumping: 50,
@@ -94,44 +100,44 @@ function SecondPage(props) {
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {currPage >= 2 && currPage < 4 && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
-                  y: "220px",
+                  // y: "130px",
+                  x: "0",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
                 }}
                 initial={{
-                  y: "1500px",
+                  y: "150px",
+                  x: "-1000px",
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 1.5,
                 }}
               >
                 STORYTELLING
               </motion.h1>
             )}
 
-            {currPage === 2 && (
+            {currPage >= 2 && currPage < 4 && (
               <motion.h1
                 className="text"
                 animate={{
                   opacity: 1,
-                  y: "230px",
+                  // y: "150px",
+                  x: "0",
                   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
                 }}
                 initial={{
-                  y: "1500px",
+                  y: "200px",
+                  x: "-1000px",
                   opacity: 0,
                 }}
                 transition={{
-                  // type: "spring",
-                  // stiffness: 40,
-                  // dumping: 200,
-
-                  duration: 2.2,
+                  duration: 1.5,
                 }}
               >
                 EXPERIENCES
@@ -146,13 +152,13 @@ function SecondPage(props) {
           </div>
 
           <div className="box--container">
-            {currPage === 2 && (
+            {currPage >= 2 && currPage < 4 && (
               <motion.div
                 className="box"
                 animate={{
                   opacity: 1,
-                  y: "80vh",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
+                  y: "60vh",
+                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
                   rotate: 360,
                 }}
                 initial={{

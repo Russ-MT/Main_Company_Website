@@ -41,8 +41,10 @@ function FirstPage(props) {
       <div
         className="first-page--container"
         ref={currRef}
-        style={{ backgroundColor: "black" }}
-      ></div>
+        // style={{ backgroundColor: "yellow" }}
+      >
+        <div className="container"></div>
+      </div>
     </>
   );
 }

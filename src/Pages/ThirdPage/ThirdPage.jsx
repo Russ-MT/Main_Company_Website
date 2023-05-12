@@ -19,7 +19,8 @@ function ThirdPage(props) {
       const scrollPosition = window.scrollY;
 
       const currentPage = Math.ceil(scrollPosition / pageHeight);
-      if (currentPage === 4) {
+      console.log(currentPage);
+      if (currentPage >= 3) {
         const col = currRef.current.style.backgroundColor;
         dispatch(changeBgColor(col));
         dispatch(setCurrPage(currentPage));

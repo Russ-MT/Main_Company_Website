@@ -1,6 +1,8 @@
 .second-page {
-  height: 200vh;
+  height: 100vh;
   color: black;
+  // border: 1px solid white;
+
   .sec-page--container {
     width: 95%;
     height: 90%;
@@ -10,11 +12,10 @@
     .text--container {
       font-family: "Roboto", sans-serif;
       color: rgb(255, 255, 255);
-      margin-top: 10vh;
-      // border: 1px solid white;
+      margin-top: 20vh;
       position: relative;
       .text {
-        margin: 0;
+        margin: -40px 0;
         padding: 0;
         font-size: 7rem;
       }
