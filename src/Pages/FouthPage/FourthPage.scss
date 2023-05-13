@@ -10,12 +10,23 @@
     display: flex;
 
     .text--container {
-      border: 1px solid white;
-      width: 80%;
+      // width: 80%;
+      font-family: "Roboto", sans-serif;
+      color: rgb(255, 255, 255);
+      margin: 20vh 0 0 10vh;
+      // position: relative;
+      border: 1px solid red;
+
+      .text {
+        margin: 0;
+        padding: 0;
+        font-size: 4rem;
+      }
     }
     .box--container {
       width: 20%;
       border: 1px solid white;
+      margin-left: auto;
       .box {
         width: 200px;
         height: 200px;

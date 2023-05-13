@@ -43,7 +43,23 @@ function FourthPage(props) {
             }}
           >
             <div className="text--container">
-              <h1 className="text">FAQs</h1>
+              <motion.h1
+                className="text"
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  //   x: `${currPage === 2 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  x: "-500px",
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 2,
+                }}
+              >
+                FAQs
+              </motion.h1>
             </div>
 
             <div className="box--container">
