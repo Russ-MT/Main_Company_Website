@@ -19,7 +19,7 @@ function FractalTree() {
         p.stroke(0);
 
         const len = 100;
-        const angle = 30;
+        const angle = 40;
 
         p.translate(p.width / 2, p.height);
         branch(len, angle);

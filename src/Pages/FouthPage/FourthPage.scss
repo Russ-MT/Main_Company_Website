@@ -1,12 +1,26 @@
-.fourth-page--container {
+.fourth-page {
   height: 100vh;
   background-color: black;
 
   .fourth-page--container {
-    .box {
-      width: 200px;
-      height: 200px;
-      background-color: white;
+    border: 1px solid #ffffff;
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+
+    .text--container {
+      border: 1px solid white;
+      width: 80%;
+    }
+    .box--container {
+      width: 20%;
+      border: 1px solid white;
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: white;
+      }
     }
   }
 }
