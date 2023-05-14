@@ -41,20 +41,19 @@ function ThirdPage(props) {
         style={{ backgroundColor: "white" }}
       >
         {isInView && (
-          <motion.div
+          <div
             className="third-page--container"
-            animate={{
-              opacity: 1,
-              y: 0,
-              //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-            }}
-            initial={{
-              y: "-100px",
-              opacity: 0,
-            }}
-            transition={{
-              duration: 2,
-            }}
+            // animate={{
+            //   opacity: 1,
+            //   y: 0,
+            // }}
+            // initial={{
+            //   y: "-100px",
+            //   opacity: 0,
+            // }}
+            // transition={{
+            //   duration: 2,
+            // }}
           >
             <div className="article">
               <h1 className="article--heading">
@@ -72,20 +71,6 @@ function ThirdPage(props) {
                   typeSpeed={40}
                   multiTextLoop
                 />
-                {/* <Typical
-                  steps={[
-                    "Let's",
-                    2000,
-                    "CONNECT",
-                    2000,
-                    "THE DOTS",
-                    2000,
-                    // "LET'S CONNECT THE DOTS",
-                    // 5000,
-                  ]}
-                  loop={Infinity}
-                  wrapper="p"
-                /> */}
               </h1>
 
               <p className="article--description">
@@ -100,7 +85,7 @@ function ThirdPage(props) {
             <div className="particle-motion">
               <FractalTree />
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
     </>
@@ -108,3 +93,4 @@ function ThirdPage(props) {
 }
 
 export default ThirdPage;
+
