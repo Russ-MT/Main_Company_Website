@@ -9,13 +9,13 @@ import Plus from "../../assets/plus.svg";
 import Cross from "../../assets/cross.svg";
 
 function FifthPage(props) {
-  const containerRef = useRef(null);
   const currRef = useRef(null);
   const dispatch = useDispatch();
   const isInView = useInView(currRef);
   const [showAns, setShowAns] = useState(false);
   const [divId, setDivId] = useState("");
   const [isHovered, setIsHovered] = useState(false);
+  const [btnId, setBtnId] = useState("");
 
   useEffect(() => {
     if (isInView) {
@@ -25,9 +25,19 @@ function FifthPage(props) {
   }, [isInView]);
 
   const ansTrigger = (event) => {
-    const id = event.target.id;
+    setDivId("");
+    setBtnId("");
+    console.log("Im trigger");
+    const idParent = event.target.id;
+
+    if (event.target.nextSibling != null) {
+      setBtnId(event.target.nextSibling.id);
+    } else if (event.target.nextSibling === null) {
+      setBtnId(event.target.previousSibling.id);
+    }
+
     setShowAns((state) => !state);
-    setDivId(id);
+    setDivId(idParent);
   };
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -40,22 +50,7 @@ function FifthPage(props) {
   return (
     <>
       <div className="fourth-page" ref={currRef}>
-        {/* {isInView && ( */}
-        <motion.div
-          className="fourth-page--container"
-          // animate={{
-          //   opacity: 1,
-          //   y: 0,
-          //   //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-          // }}
-          // initial={{
-          //   y: "-100px",
-          //   opacity: 0,
-          // }}
-          // transition={{
-          //   duration: 2,
-          // }}
-        >
+        <motion.div className="fourth-page--container">
           <div className="box--container">
             {isInView && (
               <motion.div
@@ -63,7 +58,6 @@ function FifthPage(props) {
                 animate={{
                   opacity: 1,
                   y: "60vh",
-                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
                   rotate: 360,
                 }}
                 initial={{
@@ -81,7 +75,6 @@ function FifthPage(props) {
               <motion.h1
                 animate={{
                   x: isHovered ? "200px" : 0,
-                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
                 }}
                 initial={{
                   x: 0,
@@ -101,20 +94,18 @@ function FifthPage(props) {
                 <h4 className="question--text" id="div1" onClick={ansTrigger}>
                   This is Question One ?
                 </h4>
-
-                {!showAns && (
+                {showAns && divId === "div1" && btnId === "div1" ? (
                   <img
                     id="div1"
-                    src={Plus}
+                    src={Cross}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
                   />
-                )}
-                {showAns && (
+                ) : (
                   <img
                     id="div1"
-                    src={Cross}
+                    src={Plus}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
@@ -132,25 +123,34 @@ function FifthPage(props) {
                 </div>
               )}
             </div>
-            <div className="qna--container">
+            <motion.div
+              className="qna--container"
+              animate={{
+                y: showAns && divId === "div2" ? "20px" : 0,
+              }}
+              initial={{
+                y: 0,
+              }}
+              transition={{
+                type: "spring",
+              }}
+            >
               <div className="question--container">
                 <h4 className="question--text" id="div2" onClick={ansTrigger}>
                   This is Question Two ?
                 </h4>
-
-                {!showAns && (
+                {showAns && divId === "div2" && btnId === "div2" ? (
                   <img
                     id="div2"
-                    src={Plus}
+                    src={Cross}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
                   />
-                )}
-                {showAns && (
+                ) : (
                   <img
-                    id="div1"
-                    src={Cross}
+                    id="div2"
+                    src={Plus}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
@@ -167,26 +167,35 @@ function FifthPage(props) {
                   </h6>
                 </div>
               )}
-            </div>
-            <div className="qna--container">
+            </motion.div>
+            <motion.div
+              className="qna--container"
+              animate={{
+                y: showAns && divId === "div3" ? "20px" : 0,
+              }}
+              initial={{
+                y: 0,
+              }}
+              transition={{
+                type: "spring",
+              }}
+            >
               <div className="question--container">
                 <h4 className="question--text" id="div3" onClick={ansTrigger}>
                   This is Question Three ?
                 </h4>
-
-                {!showAns && (
+                {showAns && divId === "div3" && btnId === "div3" ? (
                   <img
                     id="div3"
-                    src={Plus}
+                    src={Cross}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
                   />
-                )}
-                {showAns && (
+                ) : (
                   <img
                     id="div3"
-                    src={Cross}
+                    src={Plus}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
@@ -203,26 +212,35 @@ function FifthPage(props) {
                   </h6>
                 </div>
               )}
-            </div>
-            <div className="qna--container">
+            </motion.div>
+            <motion.div
+              className="qna--container"
+              animate={{
+                y: showAns && divId === "div4" ? "20px" : 0,
+              }}
+              initial={{
+                y: 0,
+              }}
+              transition={{
+                type: "spring",
+              }}
+            >
               <div className="question--container">
                 <h4 className="question--text" id="div4" onClick={ansTrigger}>
                   This is Question Four ?
                 </h4>
-
-                {!showAns && (
+                {showAns && divId === "div4" && btnId === "div4" ? (
                   <img
                     id="div4"
-                    src={Plus}
+                    src={Cross}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
                   />
-                )}
-                {showAns && (
+                ) : (
                   <img
                     id="div4"
-                    src={Cross}
+                    src={Plus}
                     alt="svg"
                     className="svg--icons"
                     onClick={ansTrigger}
@@ -239,11 +257,9 @@ function FifthPage(props) {
                   </h6>
                 </div>
               )}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
-        {/* )} */}
-        {/* <div className="gradient--container" ref={containerRef}></div> */}
       </div>
     </>
   );
