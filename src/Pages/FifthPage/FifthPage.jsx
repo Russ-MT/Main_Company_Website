@@ -4,9 +4,9 @@ import "intersection-observer";
 import { useSelector, useDispatch } from "react-redux";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import { motion, useInView } from "framer-motion";
-import "./FourthPage.scss";
+import "./FifthPage.scss";
 
-function FourthPage(props) {
+function FifthPage(props) {
   const containerRef = useRef(null);
   const currRef = useRef(null);
   const dispatch = useDispatch();
@@ -70,4 +70,4 @@ function FourthPage(props) {
   );
 }
 
-export default FourthPage;
+export default FifthPage;

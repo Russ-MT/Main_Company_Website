@@ -4,7 +4,8 @@ import SecondPage from "../SecondPage/SecondPage";
 import "intersection-observer";
 import FirstPage from "../FirstPage/FirstPage";
 import ThirdPage from "../ThirdPage/ThirdPage";
-import FouthPage from "../FouthPage/FouthPage";
+import FourthPage from "../FourthPage/FourthPage";
+import FifthPage from "../FifthPage/FifthPage";
 
 function Home(props) {
   return (
@@ -12,7 +13,8 @@ function Home(props) {
       <FirstPage />
       <SecondPage />
       <ThirdPage />
-      <FouthPage />
+      <FourthPage />
+      <FifthPage />
     </>
   );
 }
