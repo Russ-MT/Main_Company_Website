@@ -21,11 +21,7 @@ function FourthPage(props) {
 
   return (
     <>
-      <div
-        className="fourth-page"
-        ref={currRef}
-        style={{ backgroundColor: "black" }}
-      >
+      <div className="fourth-page" ref={currRef}>
         {isInView && (
           <motion.div
             className="fourth-page--container"
@@ -43,23 +39,7 @@ function FourthPage(props) {
             }}
           >
             <div className="text--container">
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  //   x: `${currPage === 2 ? "150vh" : "0vh"}`,
-                }}
-                initial={{
-                  x: "-500px",
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 2,
-                }}
-              >
-                FAQs
-              </motion.h1>
+              <h1 className="text">FAQs</h1>
             </div>
 
             <div className="box--container">
