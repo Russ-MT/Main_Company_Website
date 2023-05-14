@@ -126,7 +126,7 @@ function FifthPage(props) {
             <motion.div
               className="qna--container"
               animate={{
-                y: showAns && divId === "div2" ? "20px" : 0,
+                y: showAns && divId === "div1" ? "40px" : 0,
               }}
               initial={{
                 y: 0,
@@ -171,7 +171,10 @@ function FifthPage(props) {
             <motion.div
               className="qna--container"
               animate={{
-                y: showAns && divId === "div3" ? "20px" : 0,
+                y:
+                  (showAns && divId === "div1") || (showAns && divId === "div2")
+                    ? "40px"
+                    : 0,
               }}
               initial={{
                 y: 0,
@@ -216,7 +219,12 @@ function FifthPage(props) {
             <motion.div
               className="qna--container"
               animate={{
-                y: showAns && divId === "div4" ? "20px" : 0,
+                y:
+                  (showAns && divId === "div1") ||
+                  (showAns && divId === "div2") ||
+                  (showAns && divId === "div3")
+                    ? "40px"
+                    : 0,
               }}
               initial={{
                 y: 0,
