@@ -94,16 +94,17 @@ function SecondPage(props) {
                 className="text--header"
                 animate={{
                   // y: "130px",
+                  opacity: 1,
                   x: "0",
                   //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
                 initial={{
-                  y: "150px",
-                  x: "-1000px",
-                  opacity: 1,
+                  y: "130px",
+                  x: "-500px",
+                  opacity: 0,
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1,
                 }}
                 // style={{ filter: "blur(20px)" }}
               >
@@ -121,12 +122,12 @@ function SecondPage(props) {
                   //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
                 initial={{
-                  y: "150px",
-                  x: "-1000px",
+                  y: "110px",
+                  x: "-500px",
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1,
                 }}
                 // style={{ filter: "blur(20px)" }}
               >
@@ -141,25 +142,25 @@ function SecondPage(props) {
             <h1 className="text">AND COMMUNITY.</h1> */}
           </div>
 
-          <div className="box--container">
-            {isInView && (
-              <motion.div
-                className="box"
-                animate={{
-                  opacity: 1,
-                  y: "60vh",
-                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
-                  rotate: 360,
-                }}
-                initial={{
-                  opacity: 0.5,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 1.2,
-                }}
-              ></motion.div>
-            )}
+          <div className="box--container ">
+            {/* {isInView && ( */}
+            <div
+              className="box "
+              animate={{
+                opacity: 1,
+                y: 0,
+                //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
+                rotate: 360,
+              }}
+              initial={{
+                opacity: 0.5,
+                y: 0,
+              }}
+              transition={{
+                duration: 1.2,
+              }}
+            ></div>
+            {/* )} */}
           </div>
         </div>
         <div className="gradient--container" ref={containerRef}></div>

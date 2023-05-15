@@ -7,12 +7,15 @@ import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import { useInView } from "framer-motion";
 import { Fade } from "react-reveal";
 import { motion } from "framer-motion";
+import goTO from "../../assets/link.svg";
 
 function FourthPage() {
   const currRef = useRef(null);
   const isInView = useInView(currRef);
   const dispatch = useDispatch();
   const [isHovered, setIsHovered] = useState(false);
+  const [imgHover, setImgHover] = useState(false);
+  const [imgId, setImgIdHover] = useState("");
 
   useEffect(() => {
     //  console.log("Listening");
@@ -34,44 +37,17 @@ function FourthPage() {
     // };
   }, [isInView]);
 
+  console.log(imgId);
+
   return (
     <>
       <div className="fourth-page" ref={currRef}>
         <div className="experiments--container">
-          {/* <div className="experiments--heading--container">
-            <motion.h1
-              className="experiments--heading"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              animate={{
-                x: isHovered ? 500 : 0,
-                //  opacity: 0.5,
-              }}
-              initial={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 1,
-              }}
-            >
-              OUR EXPERIMENTS <span>🧪</span>{" "}
-            </motion.h1>
-          </div> */}
           <div className="experiments--heading--container">
             <div
               className="experiments--heading"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              //   animate={{
-              //     x: isHovered ? 500 : 0,
-              //     //  opacity: 0.5,
-              //   }}
-              //   initial={{
-              //     opacity: 1,
-              //   }}
-              //   transition={{
-              //     duration: 1,
-              //   }}
             >
               <motion.p
                 className="span"
@@ -318,29 +294,77 @@ function FourthPage() {
 
           {isInView && (
             <div className="card-section">
-              <Fade top>
-                <div className="experiments--card card-1 card-back">
-                  <img
-                    src="https://media.tenor.com/uHVmd0uBuU0AAAAC/bored-ape-yacht-club-nft.gif"
-                    alt=""
-                    className="hidden"
-                  />
-                  {/* <div className="description--container">
-                    {" "}
-                    <p>This is test box</p>{" "}
-                  </div> */}
+              <Fade left>
+                <div
+                  className="experiments--card card-1 card-back targetDiv"
+                  onMouseEnter={() => {
+                    setImgHover(true), setImgIdHover("img1");
+                  }}
+                  onMouseLeave={() => {
+                    setImgHover(false), setImgIdHover(null);
+                  }}
+                >
+                  {(!imgHover || imgId === "img2") && (
+                    <img
+                      src="https://nftevening.com/wp-content/uploads/2021/09/bored-ape-yacht-club-bayc-roadmap-2.0-version.png.webp"
+                      alt=""
+                      className="hidden"
+                    />
+                  )}
+                  {imgHover && imgId === "img1" && (
+                    <img
+                      src="https://media.tenor.com/uHVmd0uBuU0AAAAC/bored-ape-yacht-club-nft.gif"
+                      alt=""
+                      className="hidden"
+                    />
+                  )}
+                  <div className="description--container">
+                    <a href="/">
+                      <p>THE EVOLBITS</p>
+                      <p style={{ fontWeight: 200, fontSize: "15px" }}>
+                        A Rewind Story Of A LifeForm
+                        <img src={goTO} alt="" />
+                      </p>
+                    </a>
+                  </div>
                 </div>
               </Fade>
-              <Fade top>
-                <div className="experiments--card card-2">
-                  <img
-                    src="https://media.tenor.com/RmBLoLsN40EAAAAd/bored-ape.gif"
-                    alt=""
-                    className="hidden"
-                  />
+              <Fade right>
+                <div
+                  id="targetDiv"
+                  className="experiments--card card-2 card-back targetDiv"
+                  onMouseEnter={() => {
+                    setImgHover(true), setImgIdHover("img2");
+                  }}
+                  onMouseLeave={() => {
+                    setImgHover(false), setImgIdHover(null);
+                  }}
+                >
+                  {(!imgHover || imgId === "img1") && (
+                    <img
+                      src="https://nftevening.com/wp-content/uploads/2021/09/bored-ape-yacht-club-bayc-roadmap-2.0-version.png.webp"
+                      alt=""
+                      className="hidden"
+                    />
+                  )}
+                  {imgHover && imgId === "img2" && (
+                    <img
+                      src="https://openseauserdata.com/files/4f7f4845bbb2fe94a713fd5d2b00d4ae.gif"
+                      alt=""
+                      className="hidden"
+                    />
+                  )}
+                  <div className="description--container">
+                    <a href="/">
+                      <p>COMING SOON</p>
+                      {/* <p style={{ fontWeight: 200, fontSize: "15px" }}>
+                        <img src={goTO} alt="" />
+                      </p> */}
+                    </a>
+                  </div>
                 </div>
               </Fade>
-              <Fade top>
+              {/* <Fade top>
                 <div className="experiments--card card-3">
                   <img
                     src="https://openseauserdata.com/files/4f7f4845bbb2fe94a713fd5d2b00d4ae.gif"
@@ -357,7 +381,7 @@ function FourthPage() {
                     className="hidden"
                   />
                 </div>
-              </Fade>
+              </Fade> */}
             </div>
           )}
         </div>

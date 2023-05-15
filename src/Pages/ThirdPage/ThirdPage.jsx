@@ -14,10 +14,8 @@ function ThirdPage(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Listening");
     // const handleScroll = () => {
     if (isInView) {
-      console.log("In View");
       const col = currRef.current.style.backgroundColor;
       console.log(col);
       dispatch(changeBgColor(col));
@@ -52,7 +50,7 @@ function ThirdPage(props) {
             // }}
           >
             <div className="article">
-              <h1 className="article--heading">
+              <h1 className="article--heading targetDiv">
                 <TypeWriterEffect
                   startDelay={0}
                   cursorColor="black"
@@ -69,7 +67,7 @@ function ThirdPage(props) {
                 />
               </h1>
 
-              <p className="article--description">
+              <p className="article--description targetDiv">
                 We believe that the potential of web3 can be realized when we
                 start with imagination, not limitations.No borders,no
                 rulers,just people making cool shit, together.In the

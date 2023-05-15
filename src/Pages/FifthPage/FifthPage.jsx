@@ -55,18 +55,18 @@ function FifthPage(props) {
             {isInView && (
               <motion.div
                 className="box"
-                animate={{
-                  opacity: 1,
-                  y: "60vh",
-                  rotate: 360,
-                }}
-                initial={{
-                  opacity: 0.5,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 1.2,
-                }}
+                // animate={{
+                //   opacity: 1,
+                //   y: "60vh",
+                //   rotate: 360,
+                // }}
+                // initial={{
+                //   opacity: 0.5,
+                //   y: 0,
+                // }}
+                // transition={{
+                //   duration: 1.2,
+                // }}
               ></motion.div>
             )}
           </div>

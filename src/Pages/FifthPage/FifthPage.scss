@@ -11,9 +11,9 @@
     .text--container {
       width: 50%;
       color: rgb(0, 0, 0);
-      margin: 20vh auto;
+      margin: 40vh auto 0 auto;
       // position: relative;
-      // border: 1px solid white;
+      // border: 1px solid red;
 
       .header--container {
         margin-bottom: 20px;
@@ -66,9 +66,9 @@
     }
     .box--container {
       width: 20%;
-      // border: 1px solid white;
       margin-left: auto;
       .box {
+        margin-top: 80vh;
         width: 200px;
         height: 200px;
         background-color: rgb(0, 0, 0);
