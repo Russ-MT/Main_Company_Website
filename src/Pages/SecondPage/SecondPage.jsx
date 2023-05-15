@@ -44,12 +44,13 @@ function SecondPage(props) {
                   // rotate: 360,
                 }}
                 initial={{
-                  y: "1000px",
+                  y: "500px",
                   opacity: 0,
                 }}
                 transition={{
                   duration: 1,
                 }}
+                style={{ fontWeight: 100, fontSize: "3rem" }}
               >
                 SHAPING WEB3
               </motion.h1>
@@ -78,7 +79,11 @@ function SecondPage(props) {
                   // stiffness: 80,
                   // dumping: 50,
                 }}
-                style={{ fontSize: "5rem" }}
+                style={{
+                  fontWeight: 100,
+                  fontSize: "3rem",
+                  letterSpacing: "20px",
+                }}
               >
                 THROUGH
               </motion.h1>
@@ -86,10 +91,32 @@ function SecondPage(props) {
 
             {isInView && (
               <motion.h1
-                className="text"
+                className="text--header"
+                animate={{
+                  // y: "130px",
+                  x: "0",
+                  //   y: `${isInView  ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "150px",
+                  x: "-1000px",
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 1.5,
+                }}
+                // style={{ filter: "blur(20px)" }}
+              >
+                STORYTELLING
+              </motion.h1>
+            )}
+
+            {isInView && (
+              <motion.h1
+                className="text--header"
                 animate={{
                   opacity: 1,
-                  // y: "130px",
+                  // y: "150px",
                   x: "0",
                   //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
@@ -101,28 +128,7 @@ function SecondPage(props) {
                 transition={{
                   duration: 1.5,
                 }}
-              >
-                STORYTELLING
-              </motion.h1>
-            )}
-
-            {isInView && (
-              <motion.h1
-                className="text"
-                animate={{
-                  opacity: 1,
-                  // y: "150px",
-                  x: "0",
-                  //   y: `${isInView  ? "150vh" : "0vh"}`,
-                }}
-                initial={{
-                  y: "200px",
-                  x: "-1000px",
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 1.5,
-                }}
+                // style={{ filter: "blur(20px)" }}
               >
                 EXPERIENCES
               </motion.h1>

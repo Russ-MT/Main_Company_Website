@@ -35,11 +35,7 @@ function ThirdPage(props) {
 
   return (
     <>
-      <div
-        className="third-page"
-        ref={currRef}
-        style={{ backgroundColor: "white" }}
-      >
+      <div className="third-page" ref={currRef}>
         {isInView && (
           <div
             className="third-page--container"
@@ -59,13 +55,13 @@ function ThirdPage(props) {
               <h1 className="article--heading">
                 <TypeWriterEffect
                   startDelay={0}
-                  cursorColor="#3F3D56"
+                  cursorColor="black"
                   multiText={[
-                    "Let's",
-                    "Connect !!",
-                    "The ....",
-                    "Dots",
-                    "Let's Connect The Dots.",
+                    "LET'S",
+                    "CONNECT",
+                    "THE ....",
+                    "DOTS",
+                    "LET'S CONNECT THE DOTS.",
                   ]}
                   multiTextDelay={1000}
                   typeSpeed={40}
@@ -74,17 +70,18 @@ function ThirdPage(props) {
               </h1>
 
               <p className="article--description">
-                Lorem ipsum dolor sit amet consectetur. Gravida ultricies nunc
-                auctor sit nunc etiam nibh et. In massa at habitant orci in
-                commodo. Volutpat tortor in sagittis hendrerit lacus in vel
-                scelerisque. Curabitur at quam eget orci et tortor.
+                We believe that the potential of web3 can be realized when we
+                start with imagination, not limitations.No borders,no
+                rulers,just people making cool shit, together.In the
+                Yugaverse,fans and players are owner sand creators,and in the
+                game of web3,everyone can create and play together on one team.
               </p>
 
               <a className="learn-more--btn">Learn More</a>
             </div>
-            <div className="particle-motion">
+            {/* <div className="particle-motion">
               <FractalTree />
-            </div>
+            </div> */}
           </div>
         )}
       </div>
@@ -93,4 +90,3 @@ function ThirdPage(props) {
 }
 
 export default ThirdPage;
-

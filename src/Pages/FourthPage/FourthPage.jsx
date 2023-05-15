@@ -36,11 +36,7 @@ function FourthPage() {
 
   return (
     <>
-      <div
-        className="fourth-page"
-        ref={currRef}
-        style={{ backgroundColor: "white" }}
-      >
+      <div className="fourth-page" ref={currRef}>
         <div className="experiments--container">
           {/* <div className="experiments--heading--container">
             <motion.h1

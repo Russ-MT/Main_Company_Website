@@ -1,6 +1,7 @@
 .fourth-page {
   height: 100vh;
   overflow: hidden;
+  background-color: white;
 
   .experiments--container {
     width: 95%;
@@ -19,6 +20,7 @@
         font-weight: 600;
         display: flex;
         justify-content: center;
+        color: rgb(0, 0, 0);
       }
     }
 

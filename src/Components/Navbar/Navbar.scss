@@ -3,21 +3,21 @@ header {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 
   .header--container {
     width: 95%;
     padding: 0 20px;
     display: flex;
     position: fixed;
-    opacity: 0.7;
-    background-color: rgb(0, 0, 0);
+    // opacity: 0.7;
+    // background-color: rgb(0, 0, 0);
     z-index: 2;
 
     // opacity: 0.7;
 
     .logo {
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
       font-size: 40px;
       font-family: "Poppins", sans-serif;
     }
@@ -26,7 +26,7 @@ header {
       margin-left: auto;
       padding-top: 18px;
       .nav--link {
-        color: #ffffff;
+        color: #000000;
         margin: 0 10px;
         font-family: "Poppins", sans-serif;
         font-weight: 200;
@@ -34,6 +34,7 @@ header {
 
       .nav--link:hover {
         opacity: 0.5;
+        // color: greenyellow;
       }
     }
   }
