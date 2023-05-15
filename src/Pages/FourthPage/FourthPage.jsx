@@ -304,7 +304,7 @@ function FourthPage() {
               </motion.p>
               <motion.p
                 animate={{
-                  x: isHovered ? 300 : 0,
+                  x: isHovered ? 320 : 0,
                   //  opacity: 0.5,
                 }}
                 initial={{
@@ -329,6 +329,10 @@ function FourthPage() {
                     alt=""
                     className="hidden"
                   />
+                  {/* <div className="description--container">
+                    {" "}
+                    <p>This is test box</p>{" "}
+                  </div> */}
                 </div>
               </Fade>
               <Fade top>

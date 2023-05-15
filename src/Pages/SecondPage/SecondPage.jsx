@@ -31,11 +31,7 @@ function SecondPage(props) {
 
   return (
     <>
-      <div
-        className="second-page"
-        ref={currRef}
-        style={{ backgroundColor: "black" }}
-      >
+      <div className="second-page" ref={currRef}>
         <div className="sec-page--container">
           <div className="text--container">
             {isInView && (
