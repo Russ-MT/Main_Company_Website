@@ -2,7 +2,7 @@ import React from "react";
 import "./About.scss";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 
 function About(props) {
@@ -17,9 +17,14 @@ function About(props) {
   }, [isInView]);
   return (
     <>
-      <div className="about" ref={currRef}>
-        <p style={{ color: "red" }}>This is about page</p>
-      </div>
+      <motion.div
+        className="about"
+        ref={currRef}
+        initial={{ y: "-1000px" }}
+        animate={{ y: 0 }}
+        exit={{ y: 0 }}
+        transition={{ duration: 1 }}
+      ></motion.div>
     </>
   );
 }

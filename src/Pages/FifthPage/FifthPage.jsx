@@ -27,16 +27,24 @@ function FifthPage(props) {
   const ansTrigger = (event) => {
     setDivId("");
     setBtnId("");
-    const idParent = event.target.id;
+    // const idParent = event.target.id;
 
     if (event.target.nextSibling != null) {
-      setBtnId(event.target.nextSibling.id);
+      // console.log(`Next : ${event.target.nextSibling.className}`);
+      let id = event.target.nextSibling.className;
+      id = id.split(" ")[1];
+      setBtnId(id);
+      setDivId(id);
     } else if (event.target.nextSibling === null) {
+      // console.log(`Previous :${event.target.previousSibling.id}`);
+      let id = event.target.previousSibling.className;
+      id = id.split(" ")[1];
+
       setBtnId(event.target.previousSibling.id);
+      setDivId(event.target.previousSibling.id);
     }
 
     setShowAns((state) => !state);
-    setDivId(idParent);
   };
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -95,18 +103,16 @@ function FifthPage(props) {
                 </h4>
                 {showAns && divId === "div1" && btnId === "div1" ? (
                   <img
-                    id="div1"
                     src={Cross}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div1"
                     onClick={ansTrigger}
                   />
                 ) : (
                   <img
-                    id="div1"
                     src={Plus}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div1"
                     onClick={ansTrigger}
                   />
                 )}
@@ -140,18 +146,16 @@ function FifthPage(props) {
                 </h4>
                 {showAns && divId === "div2" && btnId === "div2" ? (
                   <img
-                    id="div2"
                     src={Cross}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div2"
                     onClick={ansTrigger}
                   />
                 ) : (
                   <img
-                    id="div2"
                     src={Plus}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div2"
                     onClick={ansTrigger}
                   />
                 )}
@@ -188,18 +192,16 @@ function FifthPage(props) {
                 </h4>
                 {showAns && divId === "div3" && btnId === "div3" ? (
                   <img
-                    id="div3"
                     src={Cross}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div3"
                     onClick={ansTrigger}
                   />
                 ) : (
                   <img
-                    id="div3"
                     src={Plus}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div3"
                     onClick={ansTrigger}
                   />
                 )}
@@ -238,18 +240,16 @@ function FifthPage(props) {
                 </h4>
                 {showAns && divId === "div4" && btnId === "div4" ? (
                   <img
-                    id="div4"
                     src={Cross}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div4"
                     onClick={ansTrigger}
                   />
                 ) : (
                   <img
-                    id="div4"
                     src={Plus}
                     alt="svg"
-                    className="svg--icons"
+                    className="svg--icons div4"
                     onClick={ansTrigger}
                   />
                 )}

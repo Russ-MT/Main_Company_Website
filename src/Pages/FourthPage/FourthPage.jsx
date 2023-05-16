@@ -329,7 +329,6 @@ function FourthPage() {
               </Fade>
               <Fade right>
                 <div
-                  id="targetDiv"
                   className="experiments--card card-2 card-back targetDiv"
                   onMouseEnter={() => {
                     setImgHover(true), setImgIdHover("img2");

@@ -6,7 +6,7 @@ import FirstPage from "../FirstPage/FirstPage";
 import ThirdPage from "../ThirdPage/ThirdPage";
 import FourthPage from "../FourthPage/FourthPage";
 import FifthPage from "../FifthPage/FifthPage";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 
@@ -16,18 +16,29 @@ function Home(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (isInView) {
       dispatch(changeBgColor("white"));
     }
   }, [isInView]);
   return (
-    <div ref={currRef}>
-      <FirstPage />
-      <SecondPage />
-      <ThirdPage />
-      <FourthPage />
-      <FifthPage />
-    </div>
+    <>
+      <motion.div
+        initial={{ y: "1000px" }}
+        animate={{ y: 0 }}
+        exit={{ y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div ref={currRef}>
+          <FirstPage />
+          <SecondPage />
+          <ThirdPage />
+          <FourthPage />
+          <FifthPage />
+        </div>
+      </motion.div>
+    </>
   );
 }
 

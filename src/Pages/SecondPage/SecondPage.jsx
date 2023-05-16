@@ -20,8 +20,6 @@ function SecondPage(props) {
                 animate={{
                   opacity: 1,
                   y: "100px",
-                  //   y: `${currPage === 2 ? "150vh" : "0vh"}`,
-                  // rotate: 360,
                 }}
                 initial={{
                   y: "500px",
