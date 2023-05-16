@@ -1,18 +1,31 @@
 import React from "react";
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Navbar(props) {
+  const { bgColor } = useSelector((state) => state.bgColor);
+
   return (
     <header>
-      <div id="navbar" className="header--container">
-        <div className="nav--container">
-          <div className="logo">LOGO</div>
+      <div
+        id="navbar"
+        className="header--container"
+        style={{ backgroundColor: bgColor }}
+      >
+        <div className="nav--container" style={{ backgroundColor: bgColor }}>
+          <div
+            className="logo"
+            style={{ color: bgColor === "black" ? "white" : "black" }}
+          >
+            LOGO
+          </div>
           <div className="nav--links">
             <NavLink
               to="/"
               style={({ isActive }) => ({
                 textDecoration: isActive ? "underline" : "none",
+                color: bgColor === "black" ? "white" : "black",
               })}
               className="nav--link"
             >
@@ -22,6 +35,7 @@ function Navbar(props) {
               to="about"
               style={({ isActive }) => ({
                 textDecoration: isActive ? "underline" : "none",
+                color: bgColor === "black" ? "white" : "black",
               })}
               className="nav--link"
             >
@@ -31,6 +45,7 @@ function Navbar(props) {
               to="socials"
               style={({ isActive }) => ({
                 textDecoration: isActive ? "underline" : "none",
+                color: bgColor === "black" ? "white" : "black",
               })}
               className="nav--link"
             >
@@ -40,6 +55,7 @@ function Navbar(props) {
               to="career"
               style={({ isActive }) => ({
                 textDecoration: isActive ? "underline" : "none",
+                color: bgColor === "black" ? "white" : "black",
               })}
               className="nav--link"
             >

@@ -1,54 +1,19 @@
 import React from "react";
 import "./ThirdPage.scss";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import "intersection-observer";
-import { useSelector, useDispatch } from "react-redux";
-import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import TypeWriterEffect from "react-typewriter-effect";
-import FractalTree from "./Fractal";
 
 function ThirdPage(props) {
   const currRef = useRef(null);
   const isInView = useInView(currRef);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    // const handleScroll = () => {
-    if (isInView) {
-      const col = currRef.current.style.backgroundColor;
-      console.log(col);
-      dispatch(changeBgColor(col));
-    }
-    // };
-
-    // Add event listener for scroll event
-    // window.addEventListener("scroll", handleScroll);
-
-    // // Clean up the event listener on component unmount
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
-  }, [isInView]);
 
   return (
     <>
       <div className="third-page" ref={currRef}>
         {isInView && (
-          <div
-            className="third-page--container"
-            // animate={{
-            //   opacity: 1,
-            //   y: 0,
-            // }}
-            // initial={{
-            //   y: "-100px",
-            //   opacity: 0,
-            // }}
-            // transition={{
-            //   duration: 2,
-            // }}
-          >
+          <div className="third-page--container">
             <div className="article">
               <h1 className="article--heading targetDiv">
                 <TypeWriterEffect

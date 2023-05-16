@@ -17,27 +17,25 @@ function FourthPage() {
   const [imgHover, setImgHover] = useState(false);
   const [imgId, setImgIdHover] = useState("");
 
-  useEffect(() => {
-    //  console.log("Listening");
-    // const handleScroll = () => {
-    if (isInView) {
-      // console.log("In View");
-      const col = currRef.current.style.backgroundColor;
-      console.log(col);
-      dispatch(changeBgColor(col));
-    }
-    // };
+  // useEffect(() => {
+  //   //  console.log("Listening");
+  //   // const handleScroll = () => {
+  //   if (isInView) {
+  //     // console.log("In View");
+  //     const col = currRef.current.style.backgroundColor;
+  //     console.log(col);
+  //     dispatch(changeBgColor(col));
+  //   }
+  //   // };
 
-    // Add event listener for scroll event
-    // window.addEventListener("scroll", handleScroll);
+  //   // Add event listener for scroll event
+  //   // window.addEventListener("scroll", handleScroll);
 
-    // // Clean up the event listener on component unmount
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
-  }, [isInView]);
-
-  console.log(imgId);
+  //   // // Clean up the event listener on component unmount
+  //   // return () => {
+  //   //   window.removeEventListener("scroll", handleScroll);
+  //   // };
+  // }, [isInView]);
 
   return (
     <>

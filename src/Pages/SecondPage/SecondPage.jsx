@@ -1,33 +1,13 @@
 import React from "react";
 import "./SecondPage.scss";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import "intersection-observer";
-import { useSelector, useDispatch } from "react-redux";
-import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import { motion, useInView } from "framer-motion";
 
 function SecondPage(props) {
   const containerRef = useRef(null);
   const currRef = useRef(null);
-  const dispatch = useDispatch();
   const isInView = useInView(currRef);
-
-  useEffect(() => {
-    // const handleScroll = () => {
-    if (isInView) {
-      const col = currRef.current.style.backgroundColor;
-      dispatch(changeBgColor(col));
-    }
-    // };
-
-    // Add event listener for scroll event
-    // window.addEventListener("scroll", handleScroll);
-
-    // // Clean up the event listener on component unmount
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
-  }, [isInView]);
 
   return (
     <>
@@ -88,13 +68,12 @@ function SecondPage(props) {
                 THROUGH
               </motion.h1>
             )}
-
             {isInView && (
-              <motion.h1
-                className="text--header"
+              <motion.div
+                className="content--one"
                 animate={{
-                  // y: "130px",
                   opacity: 1,
+
                   x: "0",
                   //   y: `${isInView  ? "150vh" : "0vh"}`,
                 }}
@@ -108,11 +87,37 @@ function SecondPage(props) {
                 }}
                 // style={{ filter: "blur(20px)" }}
               >
-                STORYTELLING
-              </motion.h1>
+                <h1 className="text--header--one">STORYTELLING</h1>
+
+                <h1 className="text--header--one">STORYTELLING</h1>
+              </motion.div>
+            )}
+            {isInView && (
+              <motion.div
+                className="content--one"
+                animate={{
+                  opacity: 1,
+
+                  x: "0",
+                  //   y: `${isInView  ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  y: "230px",
+                  x: "-500px",
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+                // style={{ filter: "blur(20px)" }}
+              >
+                <h1 className="text--header--one">EXPERIENCES</h1>
+
+                <h1 className="text--header--one">EXPERIENCES</h1>
+              </motion.div>
             )}
 
-            {isInView && (
+            {/* {isInView && (
               <motion.h1
                 className="text--header"
                 animate={{
@@ -133,7 +138,7 @@ function SecondPage(props) {
               >
                 EXPERIENCES
               </motion.h1>
-            )}
+            )} */}
 
             {/* <h1 className="text">SHAPING WEB3</h1>
             <h1 className="text">THROUGH</h1>

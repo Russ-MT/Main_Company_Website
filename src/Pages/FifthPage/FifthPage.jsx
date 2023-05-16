@@ -17,17 +17,16 @@ function FifthPage(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [btnId, setBtnId] = useState("");
 
-  useEffect(() => {
-    if (isInView) {
-      const col = currRef.current.style.backgroundColor;
-      dispatch(changeBgColor(col));
-    }
-  }, [isInView]);
+  // useEffect(() => {
+  //   if (isInView) {
+  //     const col = currRef.current.style.backgroundColor;
+  //     dispatch(changeBgColor(col));
+  //   }
+  // }, [isInView]);
 
   const ansTrigger = (event) => {
     setDivId("");
     setBtnId("");
-    console.log("Im trigger");
     const idParent = event.target.id;
 
     if (event.target.nextSibling != null) {
