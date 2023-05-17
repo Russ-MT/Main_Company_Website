@@ -3,22 +3,28 @@
   //   border: 1px solid white;
   height: 100%;
   padding: 20vh 0;
+  position: relative;
 
   .header--container {
     // border: 1px solid white;
     text-align: end;
     display: flex;
+    overflow: hidden;
 
     img {
       width: 10rem;
     }
-    a {
+    .main--links {
       margin: 10px 20px;
       font-family: "Questrial", sans-serif;
       text-decoration: none;
       font-size: 8rem;
       color: transparent;
       -webkit-text-stroke: 2px #ffffff;
+    }
+
+    .main--links:hover {
+      cursor: pointer;
     }
   }
 }

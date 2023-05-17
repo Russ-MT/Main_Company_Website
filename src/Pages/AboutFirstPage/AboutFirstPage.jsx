@@ -12,6 +12,11 @@ function AboutFirstPage(props) {
   const dispatch = useDispatch();
   const [isHovered, setIsHovered] = React.useState(false);
   const [id, setId] = React.useState("");
+  const [isClicked, setIsClicked] = React.useState(false);
+
+  const clickTrigger = () => {
+    setIsClicked((state) => !state);
+  };
 
   return (
     <>
@@ -40,14 +45,15 @@ function AboutFirstPage(props) {
             transition={{ type: "spring", stiffness: 75 }}
             style={{ position: "absolute" }}
           />
-          <motion.a
-            href=""
+          <motion.div
+            className="main--links"
             initial={{ x: isHovered && id === "div1" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div1" ? "200px" : 0 }}
             transition={{ type: "spring", stiffness: 75 }}
+            onClick={clickTrigger}
           >
             THE TALE OF US
-          </motion.a>
+          </motion.div>
         </div>
         <div
           id="div2"
@@ -67,14 +73,14 @@ function AboutFirstPage(props) {
             transition={{ type: "spring", stiffness: 75 }}
             style={{ position: "absolute" }}
           />
-          <motion.a
-            href=""
+          <motion.div
+            className="main--links"
             initial={{ x: isHovered && id === "div2" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div2" ? "200px" : 0 }}
             transition={{ type: "spring", stiffness: 75 }}
           >
             OUR GOALS
-          </motion.a>
+          </motion.div>
         </div>
         <div
           id="div3"
@@ -94,14 +100,14 @@ function AboutFirstPage(props) {
             transition={{ type: "spring", stiffness: 75 }}
             style={{ position: "absolute" }}
           />
-          <motion.a
-            href=""
+          <motion.div
+            className="main--links"
             initial={{ x: isHovered && id === "div3" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div3" ? "200px" : 0 }}
             transition={{ type: "spring", stiffness: 75 }}
           >
             THE TIMELINE
-          </motion.a>
+          </motion.div>
         </div>
       </motion.div>
     </>

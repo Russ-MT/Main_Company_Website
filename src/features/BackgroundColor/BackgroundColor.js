@@ -9,7 +9,11 @@ const bgColorSlice = createSlice({
   initialState,
   reducers: {
     changeBgColor(state, action) {
-      state.bgColor = action.payload;
+      if (action.payload) {
+        state.bgColor = action.payload;
+      } else {
+        state.bgColor = "white";
+      }
     },
   },
 });

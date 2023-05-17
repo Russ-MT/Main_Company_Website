@@ -2,10 +2,11 @@
   height: 100vh;
   // overflow: hidden;
   background-color: white;
+  // border: 1px solid black;
 
   .experiments--container {
     width: 95%;
-    margin: 30vh auto;
+    margin: 10vh auto;
 
     .experiments--heading--container {
       // border-top: 1px solid rgba(0, 0, 0, 0.584);
@@ -40,6 +41,8 @@
       grid-column-gap: 30px;
       // grid-row-gap: 10px;
       // padding: 0 10px;
+      // border: 1px solid red;
+      overflow: hidden;
 
       .experiments--card {
         width: 100%;

@@ -68,7 +68,10 @@
     }
     .box--container {
       width: 20%;
+      // margin-top: 30vh;
       margin-left: auto;
+      // height: 90%;
+      overflow: hidden;
       .box {
         margin-top: 80vh;
         width: 200px;

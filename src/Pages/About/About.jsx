@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useInView, motion } from "framer-motion";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import AboutFirstPage from "../AboutFirstPage/AboutFirstPage";
+import TaleOfUs from "../../Components/TaleOfUs/TaleOfUs";
 
 function About(props) {
   const currRef = React.useRef(null);
@@ -24,9 +25,10 @@ function About(props) {
         initial={{ y: "-1000px" }}
         animate={{ y: 0 }}
         exit={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         <AboutFirstPage />
+        <TaleOfUs />
       </motion.div>
     </>
   );

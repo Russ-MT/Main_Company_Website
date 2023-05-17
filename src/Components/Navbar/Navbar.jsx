@@ -32,7 +32,7 @@ function Navbar(props) {
       {/* <div
         // id="navbar"
         className="header--container"
-        // style={{ backgroundColor: bgColor }}
+        // style={{ backgroundColor: bgColor}}
       >*/}
       <div className="nav--container">
         <div
