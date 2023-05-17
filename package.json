@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@studio-freight/lenis": "^1.0.12",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.10",
     "gsap": "^3.11.5",
