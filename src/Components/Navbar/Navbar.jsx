@@ -39,7 +39,7 @@ function Navbar(props) {
           className="logo"
           style={{ color: bgColor === "black" ? "white" : "black" }}
         >
-          BB.co
+          LOGO
         </div>
         <div className="nav--links">
           <NavLink

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useInView, motion } from "framer-motion";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
+import AboutFirstPage from "../AboutFirstPage/AboutFirstPage";
 
 function About(props) {
   const currRef = React.useRef(null);
@@ -24,7 +25,9 @@ function About(props) {
         animate={{ y: 0 }}
         exit={{ y: 0 }}
         transition={{ duration: 1 }}
-      ></motion.div>
+      >
+        <AboutFirstPage />
+      </motion.div>
     </>
   );
 }
