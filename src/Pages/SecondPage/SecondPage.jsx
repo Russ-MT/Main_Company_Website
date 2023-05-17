@@ -146,24 +146,23 @@ function SecondPage(props) {
           </div>
 
           <div className="box--container ">
-            {/* {isInView && ( */}
-            <div
-              className="box "
-              animate={{
-                opacity: 1,
-                y: 0,
-                //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
-                rotate: 360,
-              }}
-              initial={{
-                opacity: 0.5,
-                y: 0,
-              }}
-              transition={{
-                duration: 1.2,
-              }}
-            ></div>
-            {/* )} */}
+            {isInView && (
+              <motion.div
+                className="box "
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  //   y: `${currPage > 0.8 ? "150vh" : "0vh"}`,
+                }}
+                initial={{
+                  opacity: 0.5,
+                  y: "1000px",
+                }}
+                transition={{
+                  duration: 1,
+                }}
+              ></motion.div>
+            )}
           </div>
         </div>
         <div className="gradient--container" ref={containerRef}></div>

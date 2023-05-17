@@ -2,17 +2,21 @@
   height: 100vh;
   background-color: rgb(255, 255, 255);
 
+  // border: 1px solid black;
+
   .third-page--container {
     max-width: 95%;
     // height: 100%;
     display: flex;
+    margin: auto;
 
     .article {
       width: 50%;
       height: 50%;
       padding: 0 30px;
       text-align: center;
-      margin-top: 10vh;
+      margin-top: 30vh;
+      // border: 1px solid black;
 
       .article--heading {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -27,31 +31,33 @@
           margin-top: 0;
         }
       }
+      .h1--container {
+        .article--description {
+          // padding-right: 50px;
+          margin: 1rem 0;
+          font-family: "Questrial", sans-serif;
+          // font-family: "PT Sans", sans-serif;
 
-      .article--description {
-        // padding-right: 50px;
-        margin: 3rem 0;
-        font-family: "Questrial", sans-serif;
-        // font-family: "PT Sans", sans-serif;
+          font-size: 21px;
+          line-height: 1.3;
+          text-align: justify;
+          color: #000000;
+          font-weight: lighter;
+        }
 
-        font-size: 21px;
-        line-height: 1.3;
-        text-align: justify;
-        color: #000000;
-        font-weight: lighter;
-      }
-
-      .learn-more--btn {
-        font-family: "Poppins", sans-serif;
-        font-weight: lighter;
-        font-size: 15px;
-        padding: 10px 25px;
-        border-radius: 40px;
-        background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
-        border: none;
-        margin: auto; /* Center horizontally */
-        border: 1px solid rgb(0, 0, 0);
+        .learn-more--btn {
+          font-family: "Poppins", sans-serif;
+          font-weight: lighter;
+          font-size: 15px;
+          padding: 10px 25px;
+          border-radius: 40px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+          border: none;
+          // margin-left: auto; /* Center horizontally */
+          border: 1px solid rgb(0, 0, 0);
+          margin-top: 1rem;
+        }
       }
 
       .learn-more--btn:hover {

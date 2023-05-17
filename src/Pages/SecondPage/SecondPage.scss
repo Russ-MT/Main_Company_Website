@@ -2,12 +2,12 @@
   height: 100vh;
   background-color: white;
 
-  // border: 1px solid white;
+  // border: 1px solid black;
 
   .sec-page--container {
     width: 95%;
     height: 90%;
-    margin: 0 auto;
+    margin: 30vh auto;
     display: flex;
     // border: 1px solid red;
 
@@ -72,8 +72,8 @@
     .box--container {
       margin-left: auto;
       width: 20%;
-      height: 100%;
-      // border: 1px solid red;
+      height: 460px;
+      overflow: hidden;
       .box {
         margin-top: 32vh;
         padding: 0;

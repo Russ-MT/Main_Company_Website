@@ -25,18 +25,20 @@ function Home(props) {
   return (
     <>
       <motion.div
+        className="home--container"
         initial={{ y: "1000px" }}
         animate={{ y: 0 }}
         exit={{ y: 0 }}
         transition={{ duration: 1 }}
+        ref={currRef}
       >
-        <div ref={currRef}>
-          <FirstPage />
-          <SecondPage />
-          <ThirdPage />
-          <FourthPage />
-          <FifthPage />
-        </div>
+        {/* <div> */}
+        <FirstPage />
+        <SecondPage />
+        <ThirdPage />
+        <FourthPage />
+        <FifthPage />
+        {/* </div> */}
       </motion.div>
     </>
   );
