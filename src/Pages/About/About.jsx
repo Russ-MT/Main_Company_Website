@@ -6,6 +6,7 @@ import { useInView, motion } from "framer-motion";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import AboutFirstPage from "../AboutFirstPage/AboutFirstPage";
 import TaleOfUs from "../../Components/TaleOfUs/TaleOfUs";
+import Goals from "../../Components/Goals/Goals";
 
 function About(props) {
   const currRef = React.useRef(null);
@@ -29,6 +30,7 @@ function About(props) {
       >
         <AboutFirstPage />
         <TaleOfUs />
+        <Goals />
       </motion.div>
     </>
   );

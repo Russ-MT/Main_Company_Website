@@ -23,9 +23,13 @@
         justify-content: center;
         color: rgb(0, 0, 0);
 
-        p {
+        h3 {
+          font-family: "Questrial", sans-serif;
           padding: 0;
           margin: 10px 0;
+          -webkit-text-stroke: 2px #000000;
+          color: transparent;
+          font-size: 5rem;
         }
       }
     }
