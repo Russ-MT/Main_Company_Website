@@ -71,13 +71,24 @@
       // margin-top: 30vh;
       margin-left: auto;
       // height: 90%;
-      overflow: hidden;
+      // overflow: hidden;
       .box {
         margin-top: 80vh;
         width: 200px;
         height: 200px;
         background-color: rgb(0, 0, 0);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .fourth-page--container {
+    flex-direction: column-reverse;
+
+    .box--container {
+      margin: 0 auto;
+      display: none;
     }
   }
 }
