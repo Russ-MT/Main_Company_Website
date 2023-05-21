@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   bgColor: "white",
+  id: "",
+  isClicked: false,
 };
 
 const bgColorSlice = createSlice({
@@ -15,8 +17,13 @@ const bgColorSlice = createSlice({
         state.bgColor = "white";
       }
     },
+
+    triggerDetails(state, action) {
+      state.id = action.payload.id;
+      state.isClicked = action.payload.click;
+    },
   },
 });
 
-export const { changeBgColor } = bgColorSlice.actions;
+export const { changeBgColor, triggerDetails } = bgColorSlice.actions;
 export default bgColorSlice.reducer;

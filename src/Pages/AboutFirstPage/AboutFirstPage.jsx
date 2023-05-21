@@ -5,6 +5,7 @@ import { useInView, motion } from "framer-motion";
 import { changeBgColor } from "../../features/BackgroundColor/BackgroundColor";
 import "./AboutFirstPage.scss";
 import RightArrow from "../../assets/arrowright.svg";
+import { triggerDetails } from "../../features/BackgroundColor/BackgroundColor";
 
 function AboutFirstPage(props) {
   const currRef = React.useRef(null);
@@ -14,8 +15,10 @@ function AboutFirstPage(props) {
   const [id, setId] = React.useState("");
   const [isClicked, setIsClicked] = React.useState(false);
 
-  const clickTrigger = () => {
-    setIsClicked((state) => !state);
+  const clickTrigger = (e) => {
+    const id = e.target.id;
+    // setIsClicked((state) => !state);
+    dispatch(triggerDetails({ click: true, id: id }));
   };
 
   return (
@@ -46,6 +49,7 @@ function AboutFirstPage(props) {
             style={{ position: "absolute" }}
           />
           <motion.div
+            id="about"
             className="main--links"
             initial={{ x: isHovered && id === "div1" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div1" ? "200px" : 0 }}
@@ -74,10 +78,12 @@ function AboutFirstPage(props) {
             style={{ position: "absolute" }}
           />
           <motion.div
+            id="goals"
             className="main--links"
             initial={{ x: isHovered && id === "div2" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div2" ? "200px" : 0 }}
             transition={{ type: "spring", stiffness: 75 }}
+            onClick={clickTrigger}
           >
             OUR GOALS
           </motion.div>
@@ -101,10 +107,12 @@ function AboutFirstPage(props) {
             style={{ position: "absolute" }}
           />
           <motion.div
+            id="timeline"
             className="main--links"
             initial={{ x: isHovered && id === "div3" ? "-1000px" : 0 }}
             animate={{ x: isHovered && id === "div3" ? "200px" : 0 }}
             transition={{ type: "spring", stiffness: 75 }}
+            onClick={clickTrigger}
           >
             THE TIMELINE
           </motion.div>

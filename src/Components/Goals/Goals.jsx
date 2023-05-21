@@ -1,5 +1,5 @@
 import React from "react";
-import "./TaleOfUs.scss";
+import "./Goals.scss";
 import { useSelector } from "react-redux";
 
 function TaleOfUs(props) {
@@ -10,11 +10,9 @@ function TaleOfUs(props) {
 
   return (
     <>
-      {id === "about" && isClick && (
+      {id === "goals" && isClick && (
         <div className="aboutus--container">
-          <h1 style={{ color: "black", fontSize: "7rem" }}>
-            This is Our Story
-          </h1>
+          <h1 style={{ color: "black", fontSize: "7rem" }}>Our Goals</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
             tenetur, facilis autem vitae adipisci error, voluptates consequatur

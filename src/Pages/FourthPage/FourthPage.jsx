@@ -47,7 +47,8 @@ function FourthPage() {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <motion.p
+              <motion.h3 className="span">OUR EXPERIMENTS 🧪</motion.h3>
+              {/* <motion.p
                 className="span"
                 animate={{
                   x: isHovered ? -340 : 0,
@@ -285,7 +286,7 @@ function FourthPage() {
                 }}
               >
                 🧪
-              </motion.p>
+              </motion.p> */}
               {/* UR EXPERIMENTS <span></span>{" "} */}
             </div>
           </div>
@@ -302,14 +303,12 @@ function FourthPage() {
                   setImgHover(false), setImgIdHover(null);
                 }}
                 animate={{
-                  x: 0,
-                  opacity: 1,
-                  //  opacity: 0.5,
+                  y: 0,
+
+                  //  5,
                 }}
                 initial={{
-                  x: "-1000px",
-
-                  opacity: 0,
+                  y: "200px",
                 }}
                 transition={{
                   duration: 1,
@@ -350,14 +349,12 @@ function FourthPage() {
                   setImgHover(false), setImgIdHover(null);
                 }}
                 animate={{
-                  x: 0,
-                  opacity: 1,
-                  //  opacity: 0.5,
+                  y: 0,
+
+                  //  5,
                 }}
                 initial={{
-                  x: "1000px",
-
-                  opacity: 0,
+                  y: "200px",
                 }}
                 transition={{
                   duration: 1,
