@@ -11,17 +11,23 @@ function FirstPage(props) {
     <>
       <motion.div className="first-page--container" ref={currRef}>
         <div className="container">
-          <h1
-            className="first-page--title"
-            style={{
-              color: "black",
-              fontSize: "50px",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            This is Home Page
-          </h1>
+          <div className="upper--container">
+            <div className="left--container">
+              {" "}
+              <h1 className="first-page--title">
+                EPOCH <span>(Creative Lab)</span>
+              </h1>
+            </div>
+          </div>
+          <div className="lower--container">
+            <div className="right--container">
+              <p className="first-page--body">
+                Antinomy offers a wide range of services that apply to many
+                industries. We uncover insights, design concepts and develop
+                solutions - both large and small.
+              </p>
+            </div>
+          </div>
         </div>
       </motion.div>
     </>

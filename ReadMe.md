@@ -30,3 +30,8 @@ Make sure to organize your components and pages accordingly to maintain a struct
 ## Fonts
 
 - Links & Buttons : font-family: 'Poppins', sans-serif;
+
+
+
+- 400 semi header - font-family: 'Epilogue', sans-serif;
+- Header - font-family: 'Archivo', sans-serif;

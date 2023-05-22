@@ -6,5 +6,55 @@
     height: 100%;
     background-color: rgb(255, 255, 255);
     margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    .upper--container {
+      height: 50%;
+      width: 95%;
+      margin: auto;
+      display: flex;
+      .left--container {
+        // border: 1px solid black;
+        margin-top: auto;
+        // margin-left: 25px;
+
+        h1 {
+          padding: 0;
+          margin: 0;
+          font-size: 3rem;
+          font-family: "Archivo", sans-serif;
+          font-weight: 500;
+          span {
+            font-family: "Questrial", sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgb(31, 31, 31);
+          }
+        }
+      }
+    }
+
+    .lower--container {
+      height: 50%;
+      width: 100%;
+
+      background-color: rgba(0, 0, 0, 0.935);
+      .right--container {
+        width: 30%;
+        margin-left: auto;
+        margin-top: auto;
+        text-align: start;
+        padding-right: 25px;
+
+        p {
+          font-family: "Questrial", sans-serif;
+          line-height: 20px;
+          font-weight: 200;
+          color: white;
+
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
