@@ -333,7 +333,7 @@ function FourthPage() {
                     <p>THE EVOLBITS</p>
                     <p style={{ fontWeight: 200, fontSize: "15px" }}>
                       A Rewind Story Of A LifeForm
-                      <img src={goTO} alt="" />
+                      {/* <img src={goTO} alt="" /> */}
                     </p>
                   </a>
                 </div>
